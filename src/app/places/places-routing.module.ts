@@ -43,6 +43,11 @@ const routes: Routes = [
 
         ]
 
+      },
+      {
+        path: '',
+        redirectTo: '/places/tabs/tab1',
+        pathMatch: 'full'
       }
     ]
   },
