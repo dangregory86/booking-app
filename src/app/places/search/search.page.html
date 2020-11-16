@@ -16,6 +16,12 @@
             <ion-img [src]=loadedPlaces[0].imageURL></ion-img>
             <p>The place costs {{loadedPlaces[0].price|currency}} per night!</p>
           </ion-card-header>
+          <div class="ion-padding-bottom">
+            <ion-button fill="clear" shape="round" color="primary"
+              [routerLink]="['/', 'places','tabs','tab1',loadedPlaces[0].id]" routerDrection="forward">
+              Book now
+            </ion-button>
+          </div>
         </ion-card>
 
       </ion-col>
@@ -23,7 +29,8 @@
     <ion-row>
       <ion-col size="12" size-md="8" offset-md="2" class="ion-text-center">
         <ion-list>
-          <ion-item *ngFor="let place of loadedPlaces.slice(1)">
+          <ion-item *ngFor="let place of loadedPlaces.slice(1)" [routerLink]="['/', 'places','tabs','tab1',place.id]"
+            routerDirection="forward" detail>
             <ion-thumbnail slot="start">
               <ion-img [src]=place.imageURL></ion-img>
             </ion-thumbnail>
