@@ -1,26 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Offers</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Offers</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menuId="m1"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="primary">
+            <ion-button routerLink="/places/tabs/tab2/new-offer">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor='let place of _places'>
-        <ion-item class="ion-no-padding">
-          <ion-card [routerLink]="['/', 'places', 'tabs', 'tab2', 'edit', place.id]">
-            <ion-card-header>
-              <ion-card-title>{{place.title}}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-img [src]=place.imageURL></ion-img>
-              <p>{{place.description}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor='let place of _places'>
+                <ion-item class="ion-no-padding">
+                    <ion-card [routerLink]="['/', 'places', 'tabs', 'tab2', place.id]">
+                        <ion-card-header>
+                            <ion-card-title>{{place.title}}</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-img [src]=place.imageURL></ion-img>
+                            <p>{{place.description}}</p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-item>
 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

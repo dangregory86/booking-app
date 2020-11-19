@@ -41,15 +41,8 @@ export class PlacesService {
     return [...this._places];
   }
 
-  getCurrentPlace(placeId) {
-    let place: Place;
-
-    for (let p of this._places) {
-      if (p.id === placeId) {
-        place = p;
-      }
-    }
-    return place;
+  getCurrentPlace(placeId: string) {
+    return {...this._places.find(p => p.id === placeId)}
   }
 
   constructor() { }
